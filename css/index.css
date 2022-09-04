@@ -4,6 +4,7 @@
   padding-top: 1.5rem;
   position: relative;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .section:nth-child(2n + 1) {
@@ -222,7 +223,8 @@
 }
 
 .main-wrapper {
-  width: 70%;
+  width: 90%;
+  margin-top: 1rem;
 }
 
 .wrapper{
