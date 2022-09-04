@@ -1,0 +1,137 @@
+@font-face {
+  font-family: "Main";
+  src: url(/assets/fonts/abel-regular.ttf);
+}
+
+:root {
+  --accent: #2e333b;
+  --selection: #95d9f7;
+  --section-height: 700px;
+}
+
+::selection {
+  background-color: var(--selection);
+  color: black;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, body *, body *::before, body *::after {
+  font-family: "Main";
+  font-weight: 100;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  margin: 0;
+}
+
+#notification-area {
+  position: fixed;
+  bottom: 1rem;
+  right: 10px;
+  width: 250px;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 3;
+}
+
+#notification-area.disabled {
+  transform: scale(0);
+}
+
+#notification-area .notification {
+  position: relative;
+  padding: 0.875rem 1.75rem;
+  background: var(--accent);
+  color: #f5f5f5;
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0;
+  opacity: 0;
+  left: 2rem;
+  animation: showNotification 500ms forwards alternate;
+  text-align: left;
+}
+
+.notification.contextMenu {
+  width: 30ch;
+  left: -4.25rem !important;
+  animation: showNotification 500ms forwards alternate;
+}
+
+.notif.notif-timer {
+  position: absolute;
+  bottom: 0;
+  border-radius: 0.5rem;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+
+  animation: notf-timer 5000ms ease-in-out forwards;
+}
+
+@keyframes showNotification {
+  to {
+    opacity: 1;
+    left: 0px;
+  }
+}
+
+@keyframes notf-timer {
+  to {
+    width: 0;
+  }
+}
+
+#notification-area .notification.success {
+  background: #49cc7b;
+}
+#notification-area .notification.error {
+  background: rgb(190, 51, 0);
+}
+#notification-area .notification.info {
+  background: #00acee;
+}
+
+.cross {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.cross span:first-of-type {
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+  height: 0.15rem;
+  width: 100%;
+  background-color: white;
+  transform: rotate(45deg);
+}
+
+.cross span:last-of-type {
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+  height: 0.15rem;
+  width: 100%;
+  background-color: white;
+  transform: rotate(-45deg);
+}
