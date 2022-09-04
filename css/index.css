@@ -1,8 +1,9 @@
 .section {
   height: var(--section-height);
   margin: 0;
-  padding: 1.5rem;
+  padding-top: 1.5rem;
   position: relative;
+  width: 100%;
 }
 
 .section:nth-child(2n + 1) {
@@ -197,13 +198,33 @@
   color: var(--accent);
 }
 
-.container{
-  width: clamp(500px, 45%, 90vw);
+/* FAQ Section */
+
+.header__faq {
   position: absolute;
-  transform: translate(-50%,-50%);
-  top: 50%;
   left: 50%;
+  top: 2rem;
+  transform: translate(-50%);
+  min-width: max-content;
+  z-index: 5;
 }
+
+.container{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.main-wrapper {
+  width: 70%;
+}
+
 .wrapper{
   background-color: var(--accent);
   margin-bottom: 20px;

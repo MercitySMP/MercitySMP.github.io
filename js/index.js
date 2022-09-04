@@ -138,6 +138,11 @@ for (let i = 0; i < toggles.length; i++) {
 
       contentDiv.forEach(div => {
         div.style.height = "0px";
+      });
+
+      icons.forEach(icon => {
+        icon.classList.remove(minusSign);
+        icon.classList.add(plusSign);
       })
 
       contentDiv[i].style.height = contentDiv[i].scrollHeight + "px";
@@ -152,13 +157,13 @@ for (let i = 0; i < toggles.length; i++) {
       
     }
 
-    for (let n = 0; j < contentDiv.length; j++) {
-      if (j !== i) {
-        contentDiv[n].style.height = "0px";
-        icons[n].classList.remove(minusSign);
-        icons[n].classList.add(plusSign);
-      }
-    }
+    // for (let n = 0; n < contentDiv.length; n++) {
+    //   if (n !== i) {
+    //     contentDiv[n].style.height = "0px";
+    //     icons[n].classList.remove(minusSign);
+    //     icons[n].classList.add(plusSign);
+    //   }
+    // }
 
   });
 
