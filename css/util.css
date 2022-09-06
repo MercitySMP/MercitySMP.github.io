@@ -5,7 +5,8 @@
 
 :root {
   --accent: #2e333b;
-  --selection: #95d9f7;
+  --secondary: #8fc5de;
+  --selection: #62d0ff;
   --section-height: 700px;
 }
 
@@ -145,6 +146,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100%;
   overflow-x: hidden;
+  background-color: var(--secondary);
 }
 
 .section:nth-child(2n + 1) {

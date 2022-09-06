@@ -1,5 +1,108 @@
 /** MAIN CODE **/
 
+.menu-toggle {
+  height: 1.5rem;
+  width: 2.5rem;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  overflow: hidden;
+  border-radius: .2rem;
+}
+
+.menu-toggle,
+.menu-toggle > *,
+.span,
+.span-container,
+.menu,
+.menu > * {
+  box-sizing: content-box !important;
+}
+
+.menu-span {
+  height: 0.15rem;
+  width: 2.375rem;
+  border-radius: 1rem;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  transition: all 500ms ease;
+}
+
+.span-container.active .menu-span {
+  background-color: black;
+}
+
+.menu-span2 {
+  top: 42%;
+}
+
+.menu-span3 {
+  top: calc(42% + 22%);
+}
+
+.span-container.active .menu-span1 {
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  margin-top: 0.75rem;
+}
+
+.span-container.active .menu-span2 {
+  transform: scale(0);
+}
+
+.span-container.active .menu-span3 {
+  transform: translate(-50%, -225%) rotate(-45deg);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  padding: .5rem;
+  padding-left: 1rem;
+  padding-top: 4rem;
+  padding-right: 2rem;
+  border-radius: .5rem;
+  border-top-left-radius: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-100%);
+  transition: transform 500ms ease;
+  transform-origin: left;
+  z-index: 99;
+}
+
+.menu.active {
+  transform: translateX(0);
+}
+
+.items-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: .7rem;
+}
+
+.items-container .menu-header {
+  text-align: left;
+  cursor: pointer;
+  transition: color 250ms ease;
+}
+
+.items-container .menu-header:hover {
+  color: var(--secondary);
+}
+
+/* menu code end */
+
 .section__header {
   cursor: pointer;
 }
@@ -10,26 +113,53 @@
 
 /* HERO Section */
 
-.section__hero {
-  text-align: center;
+.header__hero {
+  all: unset;
+  font-size: 6.5rem;
+  position: absolute;
+  top: 25%;
+  left: 2rem;
+  color: white;
+}
+
+.ip {
+  position: absolute;
+  top: calc(calc(25% + 5.5rem) + 2rem);
+  left: 2rem;
+  font-size: 2rem;
+  color: #999;
 }
 
 .main__image {
-  margin-top: 3rem;
+  position: absolute;
+  bottom: 3rem;
+  right: 0;
   border-radius: 1rem;
-  height: 50%;
-  cursor: pointer;
+  height: clamp(20rem, 30rem, 50vw);
   border: none;
-  outline: white solid 2px;
-  outline-offset: .75rem;
-  transition: 100ms ease;
-  transition-property: filter, outline-offset;
+  transform: rotate(30deg);
+  opacity: .6;
+  z-index: 0;
 }
 
-.main__image:where(:hover, :focus) {
-  outline-offset: .25rem;
+.btn__copyIP {
+  bottom: 30%;
+  left: 2rem;
+  transform: unset;
 }
 
+.scroll {
+  position: absolute;
+  left: 2rem;
+  bottom: 20%;
+  color: #999;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.scroll:where(:hover, :focus) {
+  color: var(--secondary);
+}
 
 /* ABOUT Section */
 
@@ -158,7 +288,7 @@
   z-index: 5;
 }
 
-.container{
+.container {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -192,15 +322,15 @@
 
 }
 
-.wrapper{
+.wrapper {
   background-color: var(--accent);
   margin-bottom: 20px;
   padding: 15px 40px;
   border-radius: 5px;
-  box-shadow: 0 15px 25px rgba(0,0,50,0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 50, 0.2);
 }
 
-.toggle{
+.toggle {
   width: 100%;
   background-color: var(--accent);
   display: flex;
@@ -215,7 +345,7 @@
   padding: 15px 0;
 }
 
-.content{
+.content {
   position: relative;
   font-size: 1.2rem;
   text-align: justify;
@@ -246,16 +376,9 @@
   transform: translate(-50%);
   border-radius: 1rem;
   height: 30%;
-  cursor: pointer;
   border: none;
   outline: white solid 2px;
   outline-offset: .5rem;
-  transition: 100ms ease;
-  transition-property: filter, outline-offset;
-}
-
-.icon__small:where(:hover, :focus) {
-  outline-offset: .25rem;
 }
 
 .link-group {
@@ -281,7 +404,7 @@
 }
 
 .link:where(:hover, :focus) {
-  color: var(--selection);
+  color: var(--secondary);
 }
 
 .footer-text {

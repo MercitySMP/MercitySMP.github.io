@@ -1,5 +1,24 @@
 import Swiper from '../static/slider/script.js';
 
+const menu = document.querySelector(".menu");
+const menuToggle = document.querySelector(".menu-toggle");
+const spanContainer = document.querySelector(".span-container");
+
+menuToggle.addEventListener("click", () => {
+  spanContainer.classList.toggle("active");
+  menu.classList.toggle("active");
+});
+
+const menuHeaders = document.querySelectorAll(".menu-header");
+
+menuHeaders.forEach(header => {
+  header.addEventListener("click", (e) => {
+    redirect(`#${e.target.getAttribute("data-redirect")}`);
+    menu.classList.remove("active");
+    spanContainer.classList.remove("active");
+  });
+})
+
 const sectionHeaders = document.querySelectorAll(".section__header");
 sectionHeaders.forEach(header => {
   header.addEventListener("click", (e) => {
@@ -160,16 +179,3 @@ for (let i = 0; i < toggles.length; i++) {
   });
 
 }
-
-/* image navigation code */
-
-const mainImage = document.querySelector(".main__image");
-const smallIcon = document.querySelector(".icon__small");
-
-mainImage.addEventListener("click", () => {
-  redirect("#credits");
-});
-
-smallIcon.addEventListener("click", () => {
-  redirect("#hero");
-})
