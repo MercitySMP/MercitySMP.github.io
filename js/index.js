@@ -157,14 +157,6 @@ for (let i = 0; i < toggles.length; i++) {
       
     }
 
-    // for (let n = 0; n < contentDiv.length; n++) {
-    //   if (n !== i) {
-    //     contentDiv[n].style.height = "0px";
-    //     icons[n].classList.remove(minusSign);
-    //     icons[n].classList.add(plusSign);
-    //   }
-    // }
-
   });
 
 }

@@ -135,3 +135,60 @@ h1, h2, h3, h4, h5, h6 {
   background-color: white;
   transform: rotate(-45deg);
 }
+
+/* page code */
+
+.section {
+  height: var(--section-height);
+  margin: 0;
+  padding-top: 1.5rem;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.section:nth-child(2n + 1) {
+  background-color: var(--accent);
+}
+
+.section:nth-child(2n + 1) .section__header {
+  color: white;
+}
+
+.section__header {
+  font-size: 2.5rem;
+}
+
+.btn {
+  --hover-background: var(--accent);
+  --hover-color: white;
+
+  min-width: max-content;
+  color: var(--hover-background);
+  padding: .5em 1.2em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  border-radius: .25rem;
+  background-color: transparent;
+  border: solid 1px var(--hover-background);
+  transition: 250ms ease;
+  transition-property: border, color, background-color;
+  font-size: 1.05rem;
+  position: absolute;
+  bottom: 6rem;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.section:nth-child(1n + 1) .btn {
+  --hover-background: white;
+  --hover-color: var(--accent);
+}
+
+.btn:hover, .btn:focus {
+  background-color: var(--hover-background);
+  color: var(--hover-color);
+}

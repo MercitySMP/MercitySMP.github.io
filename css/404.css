@@ -1,0 +1,62 @@
+.search-icon-div {
+  position: absolute;
+  top: 10rem;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+}
+
+.search-icon {
+  --translate: 25%;
+
+  height: 100%;
+  aspect-ratio: 1;
+  /* animation: search-move 2000ms ease infinite forwards; */
+  animation: search-move 3000ms infinite linear;
+}
+
+@media (max-width: 450px) {
+  .search-icon {
+    aspect-ratio: 1 / 1.25;
+  }
+}
+
+@media (max-width: 400px) {
+  .search-icon {
+    aspect-ratio: 1 / 1.5;
+  }
+}
+
+.search-icon path {
+  fill: white;
+}
+
+@keyframes search-move {
+  0% {
+    transform: rotate(0deg) translateX(var(--translate)) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(var(--translate)) rotate(-360deg);
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.button-group .btn {
+  position: unset;
+  transform: unset;
+  font-size: 1.2rem;
+}

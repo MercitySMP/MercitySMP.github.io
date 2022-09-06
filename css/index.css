@@ -1,64 +1,12 @@
-.section {
-  height: var(--section-height);
-  margin: 0;
-  padding-top: 1.5rem;
-  position: relative;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.section:nth-child(2n + 1) {
-  background-color: var(--accent);
-}
-
-.section:nth-child(2n + 1) .section__header {
-  color: white;
-}
+/** MAIN CODE **/
 
 .section__header {
-  font-size: 2.5rem;
   cursor: pointer;
 }
 
 .section__header:where(:hover, :focus) {
   text-decoration: underline 2px currentColor;
 }
-
-.btn {
-  --hover-background: var(--accent);
-  --hover-color: white;
-
-  min-width: max-content;
-  color: var(--hover-background);
-  padding: .5em 1.2em;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  border-radius: .25rem;
-  background-color: transparent;
-  border: solid 1px var(--hover-background);
-  transition: 250ms ease;
-  transition-property: border, color, background-color;
-  font-size: 1.05rem;
-  position: absolute;
-  bottom: 6rem;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.section:nth-child(1n + 1) .btn {
-  --hover-background: white;
-  --hover-color: var(--accent);
-}
-
-.btn:hover, .btn:focus {
-  background-color: var(--hover-background);
-  color: var(--hover-color);
-}
-
-/** MAIN CODE **/
 
 /* HERO Section */
 
@@ -223,8 +171,25 @@
 }
 
 .main-wrapper {
-  width: 90%;
-  margin-top: 1rem;
+  width: 95%;
+  margin-top: 3rem;
+  transition: width 250ms ease;
+}
+
+@media (min-width: 700px) {
+
+  .main-wrapper {
+    width: 65% !important;
+  }
+
+}
+
+@media (min-width: 450px) {
+
+  .main-wrapper {
+    width: 80%;
+  }
+
 }
 
 .wrapper{
@@ -259,6 +224,18 @@
   overflow: hidden;
   transition: all 250ms;
   color: white;
+}
+
+@media (max-width: 400px) {
+
+  .toggle {
+    font-size: 1.1rem;
+  }
+
+  .content {
+    font-size: 1rem;
+  }
+
 }
 
 /* END section */
