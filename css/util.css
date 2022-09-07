@@ -6,6 +6,8 @@
 :root {
   --accent: #2e333b;
   --secondary: #8fc5de;
+  --gradient-first: #6eb495;
+  --gradient-secondary: rgb(165, 227, 248);
   --selection: #62d0ff;
   --section-height: 700px;
 }
@@ -23,6 +25,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-color: var(--accent);
 }
 
 body, body *, body *::before, body *::after {
@@ -146,11 +149,14 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100%;
   overflow-x: hidden;
-  background-color: var(--secondary);
+  background-image: linear-gradient(to bottom right, var(--gradient-first), var(--gradient-secondary));
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
 }
 
 .section:nth-child(2n + 1) {
   background-color: var(--accent);
+  background-image: none;
+  clip-path: none;
 }
 
 .section:nth-child(2n + 1) .section__header {

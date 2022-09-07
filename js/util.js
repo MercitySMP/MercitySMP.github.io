@@ -25,62 +25,40 @@ function openNewPage(redirectLocation) {
  * @param {string} type
  */
 
-function notify(message, type, context) {
-  let creat;
-  if (
-    document.getElementById("notification-area") === undefined ||
-    document.getElementById("notification-area") === null
-  ) {
-    creat = document.createElement("div");
-    creat.id = "notification-area";
+function notify(message, type) {
 
-    document.body.append(creat);
-  } else {
-    creat = document.getElementById("notification-area");
-  }
+  let createdDiv = document.createElement("div");
+  let id = Math.random().toString(36).substring(2, 10);
 
-  const preference = localStorage.getItem("notifications");
+  createdDiv.setAttribute("id", id);
+  createdDiv.classList.add("notification", type);
 
-  if (preference == "enabled") {
-    let createdDiv = document.createElement("div");
-    let id = Math.random().toString(36).substring(2, 10);
-
-    createdDiv.setAttribute("id", id);
-    createdDiv.classList.add("notification", type);
-
-    if (context) {
-      createdDiv.classList.add("contextMenu");
-    }
-
-    createdDiv.innerHTML = `
+  createdDiv.innerHTML = `
 <div class="cross">
   <span class="cross__spans span1"></span>
   <span class="cross__spans span2""></span>
 </div>
 ${message}
 <span class="notif notif-timer"></span>`;
-    document.getElementById("notification-area").prepend(createdDiv);
+  document.getElementById("notification-area").prepend(createdDiv);
 
-    setTimeout(() => {
-      let notifications = document
-        .getElementById("notification-area")
-        .getElementsByClassName("notification");
-      for (let i = 0; i < notifications.length; i++) {
-        if (notifications[i].getAttribute("id") == id) {
-          notifications[i].remove();
-          break;
-        }
+  setTimeout(() => {
+    let notifications = document
+      .getElementById("notification-area")
+      .getElementsByClassName("notification");
+    for (let i = 0; i < notifications.length; i++) {
+      if (notifications[i].getAttribute("id") == id) {
+        notifications[i].remove();
+        break;
       }
-    }, 5000);
-    const notifCrosses = document.querySelectorAll(".notification .cross");
-    notifCrosses.forEach((e) => {
-      e.addEventListener("click", () => {
-        e.parentElement.remove();
-      });
+    }
+  }, 5000);
+  const notifCrosses = document.querySelectorAll(".notification .cross");
+  notifCrosses.forEach((e) => {
+    e.addEventListener("click", () => {
+      e.parentElement.remove();
     });
-  } else {
-    return;
-  }
+  });
 }
 
 /**
