@@ -2836,7 +2836,7 @@ const prototypes = {
     images: images,
   },
   extendedDefaults = {};
-class Swiper {
+export class Swiper {
   constructor() {
     let e, t;
     for (var s = arguments.length, a = new Array(s), i = 0; i < s; i++)
@@ -7020,5 +7020,3 @@ const modules = [
   EffectCards,
 ];
 Swiper.use(modules);
-export default Swiper;
-//# sourceMappingURL=swiper-bundle.esm.browser.min.js.map

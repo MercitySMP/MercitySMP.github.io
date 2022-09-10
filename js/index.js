@@ -1,16 +1,27 @@
-import Swiper from '../static/slider/script.js';
+import { Swiper } from "../static/slider/script.js";
 
-const effect = "cards";
-const creativeEffect = {
-    prev: {
-      // will set `translateZ(-400px)` on previous slides
-      translate: [0, 0, -400],
+function createSwiper(element) {
+
+  return new Swiper(element, {
+    effect: "cards",
+    rewind: true,
+  
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true,
     },
-    next: {
-      // will set `translateX(100%)` on next slides
-      translate: ['100%', 0, 0],
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
+  });
+
 }
+
+console.info("Index file run")
 
 const menu = document.querySelector(".menu");
 const menuToggle = document.querySelector(".menu-toggle");
@@ -44,22 +55,7 @@ copyIPBtn.addEventListener("click", () => {
   notify("Copied server IP", "success");
 });
 
-const swiper = new Swiper(".swiper1", {
-  effect: effect,
-  rewind: true,
-
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true,
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+const swiper = createSwiper(".swiper1");
 
 const staffMembers = [
   {
@@ -134,22 +130,7 @@ for (let i = 0; i < swiperHeaders.length; i++) {
 
 }
 
-const swiper2 = new Swiper(".swiper2", {
-  effect: effect,
-  rewind: true,
-
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true,
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+const swiper2 = createSwiper(".swiper2");
 
 
 /* ACCORDION CODE */

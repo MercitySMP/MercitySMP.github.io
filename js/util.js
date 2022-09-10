@@ -1,3 +1,9 @@
+console.info("Utility file run")
+
+/**
+ * @fires window.location.href
+ */
+
 function refreshPage() {
   redirect(window.location.href);
 }
