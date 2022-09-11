@@ -69,8 +69,6 @@
   padding-left: 1rem;
   padding-top: 4rem;
   padding-right: 2rem;
-  border-radius: .5rem;
-  border-top-left-radius: 0 !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,6 +76,9 @@
   transition: transform 500ms ease;
   transform-origin: left;
   z-index: 99;
+  width: clamp(15rem, 10rem, 10rem);
+  aspect-ratio: 1;
+  border-bottom-right-radius: .5rem;
 }
 
 .menu.active {
