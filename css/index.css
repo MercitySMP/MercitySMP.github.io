@@ -1,3 +1,11 @@
+html {
+  height: inherit !important;
+}
+
+body {
+  top: 0 !important; 
+}
+
 /** MAIN CODE **/
 
 .menu-toggle {
@@ -165,6 +173,19 @@
 
 /* ABOUT Section */
 
+.section__staff {
+  background-color: none;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--selection),
+    var(--secondary)
+  );
+}
+
+.section__staff .section__header {
+  color: black;
+}
+
 .paragraph__about {
   text-align: center;
   font-size: 1.3rem;
@@ -281,6 +302,19 @@
 
 /* FAQ Section */
 
+.section__faq {
+  background-color: none;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--selection),
+    var(--secondary)
+  );
+}
+
+.section__faq .section__header {
+  color: black;
+}
+
 .header__faq {
   position: absolute;
   left: 50%;
@@ -372,6 +406,10 @@
 
 /* END section */
 
+.section__credits {
+  clip-path: none !important;
+}
+
 .icon__small {
   margin-top: 3rem;
   margin-left: 50%;
@@ -418,4 +456,56 @@
   min-width: max-content;
   font-size: 1.4rem;
   color: #fff;
+}
+
+/** google translate code */
+
+.goog-te-banner-frame.skiptranslate {
+  visibility: hidden !important;
+}
+
+#goog-gt-tt {
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.translate__container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var(--secondary);
+  padding: 1rem;
+  border-bottom-left-radius: .2rem;
+  z-index: 10;
+}
+
+.translate__container select {
+  background-color: var(--selection);
+  border: solid 1px transparent;
+  padding: .25em 1.25em;
+  cursor: pointer;
+  font-family: "Main";
+  font-size: 1.1rem;
+}
+
+.translate__container select option {
+  background-color: var(--accent);
+  padding: .25em 1em;
+  color: white;
+  font-size: .9rem !important;
+}
+
+.translate__container img {
+  display: none !important;
+}
+
+.translate__container .skiptranslate > *:not([id=":0.targetLanguage"]) {
+  display: none !important;
 }

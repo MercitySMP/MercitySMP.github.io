@@ -140,24 +140,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* page code */
 
-.section {
+section {
   height: var(--section-height);
   margin: 0;
   padding-top: 1.5rem;
   position: relative;
   width: 100%;
   overflow-x: hidden;
-  background-image: linear-gradient(to bottom right, var(--selection), var(--secondary));
   clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+  background-color: var(--accent) !important;
 }
 
-.section:nth-child(2n + 1) {
-  background-color: var(--accent);
-  background-image: none;
-  clip-path: none;
-}
-
-.section:nth-child(2n + 1) .section__header {
+section .section__header {
   color: white;
 }
 
@@ -189,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translate(-50%);
 }
 
-.section:nth-child(1n + 1) .btn {
+section:nth-child(1n + 1) .btn {
   --hover-background: white;
   --hover-color: var(--accent);
 }

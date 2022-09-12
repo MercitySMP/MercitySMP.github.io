@@ -1,5 +1,7 @@
 import { Swiper } from "../static/slider/script.js";
 
+const allHeaders = document.querySelector(".section__header");
+
 function createSwiper(element) {
 
   return new Swiper(element, {
@@ -104,7 +106,7 @@ staffMembers.forEach(member => {
   
 <img src="${member.avatar}" alt="${member.name}" class="user-avatar" />
 
-<span class="user-header">
+<span class="user-header notranslate">
 
   <span class="user-name">${member.name}</span><span class="user-tag">#${member.tag}</span>
 
@@ -172,3 +174,5 @@ for (let i = 0; i < toggles.length; i++) {
   });
 
 }
+
+document.body.removeAttribute("style");
